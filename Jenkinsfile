@@ -14,6 +14,8 @@ stage 'test'
 
    stage name: 'validate', concurrency: 1
         sh "/usr/bin/packer validate project.json"
- sh "pwd"
+  
+   stage name: 'build', concurrency: 1
+        sh "PACKER_LOG=1;/usr/bin/packer build project.json"
 
  }
