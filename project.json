@@ -1,0 +1,23 @@
+{
+  "variables": {
+    "aws_access_key": "AKIAIEPNWLF3M4RDXYNQ",
+    "aws_secret_key": "XWSaJGTKU3qMKyEb1R53EDeczZYDf8fV1qPB+Rz5"
+  },
+  "builders": [{
+    "ami_name": "packer-example",
+    "instance_type": "t2.micro",
+    "region": "us-east-1",
+    "type": "amazon-ebs",
+    "source_ami": "ami-9be6f38c",
+    "ssh_username": "ec2-user"
+  }],
+  "provisioners": [{
+    "type": "shell",
+    "inline": [
+      "sudo yum update -y ",
+      "sudo yum install -y php git",
+      "sudo yum install -y httpd",
+      "sudo git clone https://github.com/brikis98/php-app.git /var/www/html/app"
+    ]
+  }]
+}
