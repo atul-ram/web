@@ -4,7 +4,9 @@
     "aws_secret_key": "XWSaJGTKU3qMKyEb1R53EDeczZYDf8fV1qPB+Rz5"
   },
   "builders": [{
-    "ami_name": "packer-example",
+    "access_key": "{{user `aws_access_key`}}",
+    "secret_key": "{{user `aws_secret_key`}}",
+    "ami_name": "packer-example-{{timestamp}}",
     "instance_type": "t2.micro",
     "region": "us-east-1",
     "type": "amazon-ebs",
