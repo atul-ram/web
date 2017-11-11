@@ -1,0 +1,11 @@
+
+
+
+wget http:// materials.example.com/tower/install/Ansible-Tower-license.txt
+
+ssh root@tower 
+
+curl -O -J http://content.example.com/ansible-tower3.1/x86_64/ dvd/setup-bundle/ansible-tower-setup-bundle.el7.tar.gz
+
+
+tar xzf ansible-tower-setup-bundle.el7.tar.gz 
